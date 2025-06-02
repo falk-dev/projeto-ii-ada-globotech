@@ -51,3 +51,18 @@ Desenvolver um sistema orientado a objetos capaz de processar e analisar intera�
 - Tratamento e validação de dados reais a partir de arquivos `.csv`.
 - Trabalho em equipe utilizando Git e GitHub de forma colaborativa.
 - Análise de dados para tomada de decisão baseada em métricas.
+
+---
+
+## ▶️ Como executar
+
+1. Clone o repositório:
+  ```bash
+   git clone https://github.com/falk-dev/projeto-ii-ada-globotech.git
+   cd projeto-ii-ada-globotech
+  ```
+
+2. Execute o sistema:
+```bash
+python main.py
+```
