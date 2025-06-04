@@ -1,0 +1,41 @@
+interacao_id,id_conteudo,nome_conteudo,tipo_conteudo,id_usuario,timestamp_interacao,plataforma,tipo_interacao,watch_duration_seconds,comment_text,duracao_total_seg,tempo_leitura_estimado_seg
+1,101,Novela das 9,video,1001,2023-01-01 20:05:00,Globoplay,view_start,1800,,3600,
+2,101,Novela das 9,video,1002,2023-01-01 20:10:00,Globoplay,view_start,1500,,3600,
+3,101,Novela das 9,video,1003,2023-01-01 20:15:00,Globoplay,view_start,1200,,3600,
+4,101,Novela das 9,video,1001,2023-01-01 20:35:00,Globoplay,like,0,,3600,
+5,101,Novela das 9,video,1004,2023-01-01 20:40:00,Globoplay,comment,600,"Adorei o capítulo de hoje!",3600,
+6,102,Jornal Nacional,video,1002,2023-01-01 19:00:00,G1,view_start,1800,,1800,
+7,102,Jornal Nacional,video,1003,2023-01-01 19:05:00,G1,view_start,1500,,1800,
+8,102,Jornal Nacional,video,1005,2023-01-01 19:10:00,G1,view_start,1200,,1800,
+9,102,Jornal Nacional,video,1001,2023-01-01 19:15:00,G1,share,0,,1800,
+10,102,Jornal Nacional,video,1004,2023-01-01 19:20:00,G1,comment,300,"Matéria importante sobre economia",1800,
+11,103,Podcast Economia,podcast,1003,2023-01-02 08:00:00,G1,view_start,1200,,1800,
+12,103,Podcast Economia,podcast,1005,2023-01-02 08:30:00,G1,view_start,900,,1800,
+13,103,Podcast Economia,podcast,1001,2023-01-02 09:00:00,G1,view_start,600,,1800,
+14,103,Podcast Economia,podcast,1002,2023-01-02 09:30:00,G1,like,0,,1800,
+15,103,Podcast Economia,podcast,1004,2023-01-02 10:00:00,G1,comment,450,"Conteúdo muito relevante",1800,
+16,104,Artigo Política,artigo,1004,2023-01-02 10:00:00,G1,comment,300,"Ótima análise!",,600
+17,104,Artigo Política,artigo,1001,2023-01-02 10:30:00,G1,view_start,450,,,600
+18,104,Artigo Política,artigo,1002,2023-01-02 11:00:00,G1,view_start,300,,,600
+19,104,Artigo Política,artigo,1003,2023-01-02 11:30:00,G1,share,0,,,600
+20,104,Artigo Política,artigo,1005,2023-01-02 12:00:00,G1,comment,240,"Precisamos de mais artigos assim",,600
+21,105,Esporte Espetacular,video,1001,2023-01-03 12:00:00,Globoplay,view_start,2700,,3600,
+22,105,Esporte Espetacular,video,1002,2023-01-03 12:30:00,Globoplay,view_start,1800,,3600,
+23,105,Esporte Espetacular,video,1003,2023-01-03 13:00:00,Globoplay,view_start,900,,3600,
+24,105,Esporte Espetacular,video,1004,2023-01-03 13:30:00,Globoplay,like,0,,3600,
+25,105,Esporte Espetacular,video,1005,2023-01-03 14:00:00,Globoplay,comment,1200,"Que jogo incrível!",3600,
+26,106,Documentário Amazônia,video,1005,2023-01-04 15:00:00,Globoplay,view_start,2400,,3000,
+27,106,Documentário Amazônia,video,1001,2023-01-04 15:30:00,Globoplay,view_start,1800,,3000,
+28,106,Documentário Amazônia,video,1002,2023-01-04 16:00:00,Globoplay,view_start,1200,,3000,
+29,106,Documentário Amazônia,video,1003,2023-01-04 16:30:00,Globoplay,share,0,,3000,
+30,106,Documentário Amazônia,video,1004,2023-01-04 17:00:00,Globoplay,comment,600,"Conscientização importante",3000,
+31,107,Podcast Cultura,podcast,1004,2023-01-05 09:00:00,G1,view_start,1500,,2400,
+32,107,Podcast Cultura,podcast,1005,2023-01-05 09:30:00,G1,view_start,1200,,2400,
+33,107,Podcast Cultura,podcast,1001,2023-01-05 10:00:00,G1,view_start,900,,2400,
+34,107,Podcast Cultura,podcast,1002,2023-01-05 10:30:00,G1,like,0,,2400,
+35,107,Podcast Cultura,podcast,1003,2023-01-05 11:00:00,G1,comment,300,"Adorei a entrevista",2400,
+36,108,Artigo Tecnologia,artigo,1003,2023-01-06 14:00:00,G1,view_start,480,,,900
+37,108,Artigo Tecnologia,artigo,1004,2023-01-06 14:30:00,G1,view_start,360,,,900
+38,108,Artigo Tecnologia,artigo,1005,2023-01-06 15:00:00,G1,view_start,240,,,900
+39,108,Artigo Tecnologia,artigo,1001,2023-01-06 15:30:00,G1,share,0,,,900
+40,108,Artigo Tecnologia,artigo,1002,2023-01-06 16:00:00,G1,comment,180,"Inovações impressionantes",,900
