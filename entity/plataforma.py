@@ -1,7 +1,7 @@
 class Plataforma:
     
 # Construtor
-    def __init__(self, nome_plataforma: str, id_plataforma: int = None):
+    def __init__(self, id_plataforma: int, nome_plataforma: str)->None:
         self.__id_plataforma = id_plataforma
         self.__nome_plataforma = nome_plataforma
         
@@ -33,7 +33,7 @@ class Plataforma:
         
     #__str__(self): Retorna o nome da plataforma.
     def __str__(self):
-        return self.__nome_plataforma
+        return f"Id da Plataforma: {self.__id_plataforma} - Nome da Plataforma: {self.__nome_plataforma}"
     
     #__repr__(self): Retorna uma representação como Plataforma(nome='...').
     def __repr__(self):
@@ -46,3 +46,7 @@ class Plataforma:
     #__hash__(self): Retorna o hash do nome da plataforma.  
     def __hash__(self):
         return hash(self.__nome_plataforma)
+
+
+
+
