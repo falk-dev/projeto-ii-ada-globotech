@@ -30,14 +30,14 @@ internamente pela classe gerenciadora).
 ### 📦 1.2. Classe `Conteudo` (classe base)
 Representa um item de conteúdo consumível.
 
-- [ ] Criar atributos protegidos:
-  - [ ] `_id_conteudo` (int);
-  - [ ] `_nome_conteudo` (str);
-  - [ ] `_interacoes` (list): Lista para armazenar objetos Interacao associados a este conteúdo.
-- [ ] Construtor `__init__()`:
-  - [ ] Recebe `id_conteudo` e `nome_conteudo`;
-  - [ ] Inicializa `_interacoes` como uma lista vazia.
-- [ ] Criar `@property` para `id_conteudo` e `nome_conteudo`.
+- [X] Criar atributos protegidos:
+  - [X] `_id_conteudo` (int);
+  - [X] `_nome_conteudo` (str);
+  - [X] `_interacoes` (list): Lista para armazenar objetos Interacao associados a este conteúdo.
+- [X] Construtor `__init__()`:
+  - [X] Recebe `id_conteudo` e `nome_conteudo`;
+  - [X] Inicializa `_interacoes` como uma lista vazia.
+- [X] Criar `@property` para `id_conteudo` e `nome_conteudo`.
 - [ ] Métodos:
   - [ ] `adicionar_interacao(self, interacao)`: Adiciona um objeto Interacao à lista `_interacoes`;
   - [ ] `calcular_total_interacoes_engajamento(self)`: Calcula o total de 'like', 'share', 'comment';
@@ -144,11 +144,11 @@ Cada tarefa pode ser marcada com:
 | 1.1 | Construtor `__init__()` |  |  |  |
 | 1.1 | Criar `@property` e `@setter` para atributos |  |  |  |
 | 1.1 | Métodos mágicos |  |  |  |
-| 1.2 | Criar atributos protegidos |  |  |  |
-| 1.2 | Construtor `__init__()` |  |  |  |
-| 1.2 | Criar `@property` |  |  |  |
-| 1.2 | Métodos |  |  |  |
-| 1.2 | Métodos mágicos |  |  |  |
+| 1.2 | Criar atributos protegidos | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Construtor `__init__()` | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Criar `@property` | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Métodos | Mychelle |  | ⏳ |
+| 1.2 | Métodos mágicos | Mychelle |  | ⏳ |
 | 1.3 | Classe `Video` |  |  |  |
 | 1.3 | Classe `Podcast`: atributo `__duracao_total_episodio_seg` |  |  |  |
 | 1.3 | Classe `Artigo`: atributo `__tempo_leitura_estimado_seg` |  |  |  |
