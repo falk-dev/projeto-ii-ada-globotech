@@ -30,14 +30,14 @@ internamente pela classe gerenciadora).
 ### 📦 1.2. Classe `Conteudo` (classe base)
 Representa um item de conteúdo consumível.
 
-- [ ] Criar atributos protegidos:
-  - [ ] `_id_conteudo` (int);
-  - [ ] `_nome_conteudo` (str);
-  - [ ] `_interacoes` (list): Lista para armazenar objetos Interacao associados a este conteúdo.
-- [ ] Construtor `__init__()`:
-  - [ ] Recebe `id_conteudo` e `nome_conteudo`;
-  - [ ] Inicializa `_interacoes` como uma lista vazia.
-- [ ] Criar `@property` para `id_conteudo` e `nome_conteudo`.
+- [X] Criar atributos protegidos:
+  - [X] `_id_conteudo` (int);
+  - [X] `_nome_conteudo` (str);
+  - [X] `_interacoes` (list): Lista para armazenar objetos Interacao associados a este conteúdo.
+- [X] Construtor `__init__()`:
+  - [X] Recebe `id_conteudo` e `nome_conteudo`;
+  - [X] Inicializa `_interacoes` como uma lista vazia.
+- [X] Criar `@property` para `id_conteudo` e `nome_conteudo`.
 - [ ] Métodos:
   - [ ] `adicionar_interacao(self, interacao)`: Adiciona um objeto Interacao à lista `_interacoes`;
   - [ ] `calcular_total_interacoes_engajamento(self)`: Calcula o total de 'like', 'share', 'comment';
@@ -140,34 +140,34 @@ Cada tarefa pode ser marcada com:
 
 | Etapa | Tarefa | Responsável | Realizado em | Status |
 |-------|--------|-------------|--------|--------|
-| 1.1 | Criar atributos privados |  |  |  |
-| 1.1 | Construtor `__init__()` |  |  |  |
-| 1.1 | Criar `@property` e `@setter` para atributos |  |  |  |
-| 1.1 | Métodos mágicos |  |  |  |
-| 1.2 | Criar atributos protegidos |  |  |  |
-| 1.2 | Construtor `__init__()` |  |  |  |
-| 1.2 | Criar `@property` |  |  |  |
-| 1.2 | Métodos |  |  |  |
-| 1.2 | Métodos mágicos |  |  |  |
-| 1.3 | Classe `Video` |  |  |  |
-| 1.3 | Classe `Podcast`: atributo `__duracao_total_episodio_seg` |  |  |  |
-| 1.3 | Classe `Artigo`: atributo `__tempo_leitura_estimado_seg` |  |  |  |
-| 1.4 | Atributos (privados com properties) |  |  |  |
-| 1.4 | Atributo de Classe |  |  |  |
-| 1.4 | Construtor (`__init__`) |  |  |  |
-| 1.4 | Properties |  |  |  |
-| 1.4 | Métodos Mágicos |  |  |  |
-| 1.5 | Atributos |  |  |  |
-| 1.5 | Construtor (`__init__`) |  |  |  |
-| 1.5 | Properties |  |  |  |
-| 1.5 | Métodos |  |  |  |
-| 1.5 | Métodos Mágicos |  |  |  |
-| 2 | Atributos (privados) |  |  |  |
-| 2 | Construtor (`__init__`) |  |  |  |
-| 2 | Métodos de Gerenciamento de Plataforma (CRUD) |  |  |  |
-| 2 | Métodos de Carga e Processamento |  |  |  |
-| 2 | Métodos de Análise e Relatório |  |  |  |
-| 2 | Atributo de Classe/Método de Classe |  |  |  |
+| 1.1 | Criar atributos privados | Will |  |  |
+| 1.1 | Construtor `__init__()` | Will |  |  |
+| 1.1 | Criar `@property` e `@setter` para atributos | Will |  |  |
+| 1.1 | Métodos mágicos | Will |  |  |
+| 1.2 | Criar atributos protegidos | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Construtor `__init__()` | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Criar `@property` | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Métodos | Mychelle |  | ⏳ |
+| 1.2 | Métodos mágicos | Mychelle |  | ⏳ |
+| 1.3 | Classe `Video` | Gabi |  |  |
+| 1.3 | Classe `Podcast` | Gabi |  |  |
+| 1.3 | Classe `Artigo` | Gabi |  |  |
+| 1.4 | Atributos (privados com properties) | Rafa |  |  |
+| 1.4 | Atributo de Classe | Rafa |  |  |
+| 1.4 | Construtor (`__init__`) | Rafa |  |  |
+| 1.4 | Properties | Rafa |  |  |
+| 1.4 | Métodos Mágicos | Rafa |  |  |
+| 1.5 | Atributos | Isabela |  |  |
+| 1.5 | Construtor (`__init__`) | Isabela |  |  |
+| 1.5 | Properties | Isabela |  |  |
+| 1.5 | Métodos | Isabela |  |  |
+| 1.5 | Métodos Mágicos | Isabela |  |  |
+| 2 | Atributos (privados) | Alice e Gabi |  |  |
+| 2 | Construtor (`__init__`) | Alice e Gabi |  |  |
+| 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Alice e Gabi |  |  |
+| 2 | Métodos de Carga e Processamento | Alice e Gabi |  |  |
+| 2 | Métodos de Análise e Relatório | Alice e Gabi |  |  |
+| 2 | Atributo de Classe/Método de Classe | Alice e Gabi |  |  |
 | 3 | Criar estrutura de diretórios e arquivos | Will Costa | 04/06/2025 | ✅ |
 | 4 | Preparar apresentação, slides, explicações |  |  |  |
 ---
