@@ -41,7 +41,7 @@ class Conteudo:
         self._nome_conteudo = nome
 
     # Métodos
-    def adicionar_interacao(self, interacao):
+    def adicionar_interacao(self, interacao): 
         pass
 
     def calcular_total_interacoes_engajamento(self):
@@ -64,4 +64,4 @@ class Conteudo:
         pass
 
     def __repr__(self):
-        pass
+        return f"Curso(id_conteudo={self._id_conteudo}, nome_conteudo={self._nome_conteudo})"
