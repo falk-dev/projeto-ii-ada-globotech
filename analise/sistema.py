@@ -61,3 +61,7 @@ class SistemaAnaliseEngajamento:
         ■ Tenta instanciar Interacao, lidando com ValueError para validações.
         ■ Se Interacao válida, registra-a nos objetos Conteudo e Usuario
         """
+
+    # Método público criado para não acessar diretamente o método protegido '_carregar_interacoes_csv()'.
+    def carregar_interacoes(self, caminho_arquivo: str):
+        return self._carregar_interacoes_csv(caminho_arquivo)

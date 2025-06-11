@@ -172,15 +172,15 @@ Cada tarefa pode ser marcada com:
 
 | Etapa | Tarefa | Responsável | Realizado em | Status |
 |-------|--------|-------------|--------|--------|
-| 1.1 | Criar atributos privados | Will |  |  |
-| 1.1 | Construtor `__init__()` | Will |  |  |
-| 1.1 | Criar `@property` e `@setter` para atributos | Will |  |  |
-| 1.1 | Métodos mágicos | Will |  |  |
+| 1.1 | Criar atributos privados | Will | 11/06/2025 | ✅ |
+| 1.1 | Construtor `__init__()` | Will | 11/06/2025 | ✅ |
+| 1.1 | Criar `@property` e `@setter` para atributos | Will | 11/06/2025 | ✅ |
+| 1.1 | Métodos mágicos | Will | 11/06/2025 | ✅ |
 | 1.2 | Criar atributos protegidos | Mychelle | 09/06/2025 | ✅ |
 | 1.2 | Construtor `__init__()` | Mychelle | 09/06/2025 | ✅ |
 | 1.2 | Criar `@property` | Mychelle | 09/06/2025 | ✅ |
-| 1.2 | Métodos | Mychelle |  | ⏳ |
-| 1.2 | Métodos mágicos | Mychelle |  | ⏳ |
+| 1.2 | Métodos | Mychelle | 09/06/2025 | 🚫 |
+| 1.2 | Métodos mágicos | Mychelle | 09/06/2025 | 🚫 |
 | 1.3 | Classe `Video` | Gabi |  |  |
 | 1.3 | Classe `Podcast` | Gabi |  |  |
 | 1.3 | Classe `Artigo` | Gabi |  |  |
@@ -196,8 +196,8 @@ Cada tarefa pode ser marcada com:
 | 1.5 | Métodos Mágicos | Isabela |  |  |
 | 2 | Atributos (privados) | Mychelle | 10/06/2025 | ✅ |
 | 2 | Construtor (`__init__`) | Mychelle | 10/06/2025 | ✅ |
-| 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Mychelle | 10/06/2025 | ⏳ |
-| 2 | Métodos de Carga e Processamento | Mychelle | 10/06/2025 | ⏳ |
+| 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Alice |  |  |
+| 2 | Métodos de Carga e Processamento | Mychelle | 10/06/2025 | 🚫 |
 | 2 | Métodos de Análise e Relatório | Alice  |  |  |
 | 2 | Atributo de Classe/Método de Classe | Mychelle | 10/06/2025 | ✅ |
 | 3 | Criar estrutura de diretórios e arquivos | Will | 04/06/2025 | ✅ |
