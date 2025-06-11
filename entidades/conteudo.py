@@ -65,3 +65,15 @@ class Conteudo:
 
     def __repr__(self):
         return f"Curso(id_conteudo={self._id_conteudo}, nome_conteudo={self._nome_conteudo})"
+
+
+class Video(Conteudo):
+    pass
+
+class Podcast(Conteudo):
+    pass
+
+class Artigo(Conteudo):
+    pass
+
+
