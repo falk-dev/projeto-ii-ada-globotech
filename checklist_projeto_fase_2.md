@@ -106,20 +106,20 @@ Representa um usuário da plataforma.
 
 ## 🔹 2. Sistema de Orquestração e Análise `SistemaAnaliseEngajamento`
 
-- [ ] Atributos (privados):
-  - [ ] `__plataformas_registradas`: Dicionário mapeando `nome_plataforma` (str) para objetos `Plataforma`. Usado para o "CRUD" em memória. 
-  - [ ] `__conteudos_registrados`: Dicionário mapeando `id_conteudo` (int) para objetos `Conteudo` (ou suas subclasses).
-  - [ ] `__usuarios_registrados`: Dicionário mapeando `id_usuario` (int) para objetos `Usuario`.
-  - [ ] `__proximo_id_plataforma` (int): Para gerar IDs para novas plataformas.
-- [ ] Construtor (`__init__`): Inicializa os dicionários e o contador de ID.
+- [X] Atributos (privados):
+  - [X] `__plataformas_registradas`: Dicionário mapeando `nome_plataforma` (str) para objetos `Plataforma`. Usado para o "CRUD" em memória. 
+  - [X] `__conteudos_registrados`: Dicionário mapeando `id_conteudo` (int) para objetos `Conteudo` (ou suas subclasses).
+  - [X] `__usuarios_registrados`: Dicionário mapeando `id_usuario` (int) para objetos `Usuario`.
+  - [X] `__proximo_id_plataforma` (int): Para gerar IDs para novas plataformas.
+- [x] Construtor (`__init__`): Inicializa os dicionários e o contador de ID.
 - [ ] Métodos de Gerenciamento de Plataforma ("CRUD" em memória): 
   - [ ] `cadastrar_plataforma(self, nome_plataforma: str) -> Plataforma`: Cria e adiciona uma nova plataforma se não existir. Retorna o objeto `Plataforma`.
   - [ ] `obter_plataforma(self, nome_plataforma: str) -> Plataforma`: Retorna uma plataforma pelo nome. Se não existir, pode cadastrá-la.
   - [ ] `listar_plataformas(self) -> list`: Retorna uma lista de todas as plataformas cadastradas.
 - [ ] Métodos de Carga e Processamento:
-  - [ ] `_carregar_interacoes_csv(self, caminho_arquivo: str) -> list`: Carrega dados brutos do CSV.
+  - [X] `_carregar_interacoes_csv(self, caminho_arquivo: str) -> list`: Carrega dados brutos do CSV.
   - [ ] `processar_interacoes_do_csv(self, caminho_arquivo: str)`:
-    - [ ] Chama `_carregar_interacoes_csv`.
+    - [X] Chama `_carregar_interacoes_csv`.
     - [ ] Ao invés de gerar um dicionario com os dados brutos, será adaptado para armazenar os dados como objetos da classe adequada:
       - [ ] Obtém/Cria o objeto `Plataforma`.
       - [ ] Obtém/Cria o objeto `Conteudo`.
@@ -130,46 +130,9 @@ Representa um usuário da plataforma.
   - [ ] `gerar_relatorio_engajamento_conteudos(self, top_n: int = None)`: Itera por `__conteudos_registrados`, usa os métodos de cada objeto `Conteudo` para calcular métricas e as exibe.
   - [ ] `gerar_relatorio_atividade_usuarios(self, top_n: int = None)`: Similar, para usuários.
   - [ ] `identificar_top_conteudos(self, metrica: str, n: int)`: (e.g., `metrica='tempo_total_consumo'`).
-- [ ] Atributo de Classe/Método de Classe (opcional):
-  - [ ] `SistemaAnaliseEngajamento.VERSAO_ANALISE = "2.0"`
-
-Cada tarefa pode ser marcada com:
-- ✅ Concluído
-- ⏳ Em andamento
-- 🚫 Bloqueado
-
-| Etapa | Tarefa | Responsável | Realizado em | Status |
-|-------|--------|-------------|--------|--------|
-| 1.1 | Criar atributos privados | Will |  |  |
-| 1.1 | Construtor `__init__()` | Will |  |  |
-| 1.1 | Criar `@property` e `@setter` para atributos | Will |  |  |
-| 1.1 | Métodos mágicos | Will |  |  |
-| 1.2 | Criar atributos protegidos | Mychelle | 09/06/2025 | ✅ |
-| 1.2 | Construtor `__init__()` | Mychelle | 09/06/2025 | ✅ |
-| 1.2 | Criar `@property` | Mychelle | 09/06/2025 | ✅ |
-| 1.2 | Métodos | Mychelle |  | ⏳ |
-| 1.2 | Métodos mágicos | Mychelle |  | ⏳ |
-| 1.3 | Classe `Video` | Gabi |  |  |
-| 1.3 | Classe `Podcast` | Gabi |  |  |
-| 1.3 | Classe `Artigo` | Gabi |  |  |
-| 1.4 | Atributos (privados com properties) | Rafa |  |  |
-| 1.4 | Atributo de Classe | Rafa |  |  |
-| 1.4 | Construtor (`__init__`) | Rafa |  |  |
-| 1.4 | Properties | Rafa |  |  |
-| 1.4 | Métodos Mágicos | Rafa |  |  |
-| 1.5 | Atributos | Isabela |  |  |
-| 1.5 | Construtor (`__init__`) | Isabela |  |  |
-| 1.5 | Properties | Isabela |  |  |
-| 1.5 | Métodos | Isabela |  |  |
-| 1.5 | Métodos Mágicos | Isabela |  |  |
-| 2 | Atributos (privados) | Alice e Gabi |  |  |
-| 2 | Construtor (`__init__`) | Alice e Gabi |  |  |
-| 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Alice e Gabi |  |  |
-| 2 | Métodos de Carga e Processamento | Alice e Gabi |  |  |
-| 2 | Métodos de Análise e Relatório | Alice e Gabi |  |  |
-| 2 | Atributo de Classe/Método de Classe | Alice e Gabi |  |  |
-| 3 | Criar estrutura de diretórios e arquivos | Will Costa | 04/06/2025 | ✅ |
-| 4 | Preparar apresentação, slides, explicações |  |  |  |
+- [X] Atributo de Classe/Método de Classe (opcional):
+  - [X] `SistemaAnaliseEngajamento.VERSAO_ANALISE = "2.0"`
+  
 ---
 
 ## 🔹 3. Estrutura de Diretórios
@@ -201,6 +164,44 @@ princípios da POO foram aplicados.
 
 
 ---
+
+Cada tarefa pode ser marcada com:
+- ✅ Concluído
+- ⏳ Em andamento
+- 🚫 Bloqueado
+
+| Etapa | Tarefa | Responsável | Realizado em | Status |
+|-------|--------|-------------|--------|--------|
+| 1.1 | Criar atributos privados | Will |  |  |
+| 1.1 | Construtor `__init__()` | Will |  |  |
+| 1.1 | Criar `@property` e `@setter` para atributos | Will |  |  |
+| 1.1 | Métodos mágicos | Will |  |  |
+| 1.2 | Criar atributos protegidos | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Construtor `__init__()` | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Criar `@property` | Mychelle | 09/06/2025 | ✅ |
+| 1.2 | Métodos | Mychelle |  | ⏳ |
+| 1.2 | Métodos mágicos | Mychelle |  | ⏳ |
+| 1.3 | Classe `Video` | Gabi |  |  |
+| 1.3 | Classe `Podcast` | Gabi |  |  |
+| 1.3 | Classe `Artigo` | Gabi |  |  |
+| 1.4 | Atributos (privados com properties) | Rafa |  |  |
+| 1.4 | Atributo de Classe | Rafa |  |  |
+| 1.4 | Construtor (`__init__`) | Rafa |  |  |
+| 1.4 | Properties | Rafa |  |  |
+| 1.4 | Métodos Mágicos | Rafa |  |  |
+| 1.5 | Atributos | Isabela |  |  |
+| 1.5 | Construtor (`__init__`) | Isabela |  |  |
+| 1.5 | Properties | Isabela |  |  |
+| 1.5 | Métodos | Isabela |  |  |
+| 1.5 | Métodos Mágicos | Isabela |  |  |
+| 2 | Atributos (privados) | Mychelle | 10/06/2025 | ✅ |
+| 2 | Construtor (`__init__`) | Mychelle | 10/06/2025 | ✅ |
+| 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Mychelle | 10/06/2025 | ⏳ |
+| 2 | Métodos de Carga e Processamento | Mychelle | 10/06/2025 | ⏳ |
+| 2 | Métodos de Análise e Relatório | Alice  |  |  |
+| 2 | Atributo de Classe/Método de Classe | Mychelle | 10/06/2025 | ✅ |
+| 3 | Criar estrutura de diretórios e arquivos | Will | 04/06/2025 | ✅ |
+| 4 | Preparar apresentação, slides, explicações | ? |  |  |
 
 
 *Checklist baseado no documento oficial da Fase 2.*
