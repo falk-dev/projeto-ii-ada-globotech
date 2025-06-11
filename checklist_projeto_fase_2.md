@@ -14,18 +14,18 @@ robusto, modular, extensível e com maior integridade dos dados
 
 Representa uma plataforma onde o conteúdo é consumido ou a interação ocorre.
 
-- [ ] Criar atributos privados:
-  - [ ] `__id_plataforma` (int) - Identicador único da plataforma (pode ser gerado
+- [X] Criar atributos privados:
+  - [X] `__id_plataforma` (int) - Identicador único da plataforma (pode ser gerado
 internamente pela classe gerenciadora).
-  - [ ] `__nome_plataforma` (str) - Nome da plataforma (e.g., "Globoplay", "G1").
-- [ ] Construtor `__init__()`:
-  - [ ] Recebe nome_plataforma e, opcionalmente, id_plataforma.
-  - [ ] Valida se o nome não está vazio.
-- [ ] Criar `@property` e `@*.setter` para acesso e validação dos atributos.
-- [ ] Métodos mágicos:
-  - [ ] `__str__(self)`: Retorna o nome da plataforma.
-  - [ ] `__repr__(self)`: Retorna uma representação como `Plataforma(nome='...')`.
-  - [ ] `__eq__(self, other)` e ` __hash__(self)`: Para permitir que objeto Plataforma sejam comparados e usados em coleções como sets ou chaves de dicionários (baseado no nome, por exemplo).
+  - [X] `__nome_plataforma` (str) - Nome da plataforma (e.g., "Globoplay", "G1").
+- [X] Construtor `__init__()`:
+  - [X] Recebe nome_plataforma e, opcionalmente, id_plataforma.
+  - [X] Valida se o nome não está vazio.
+- [X] Criar `@property` e `@*.setter` para acesso e validação dos atributos.
+- [X] Métodos mágicos:
+  - [X] `__str__(self)`: Retorna o nome da plataforma.
+  - [X] `__repr__(self)`: Retorna uma representação como `Plataforma(nome='...')`.
+  - [X] `__eq__(self, other)` e ` __hash__(self)`: Para permitir que objeto Plataforma sejam comparados e usados em coleções como sets ou chaves de dicionários (baseado no nome, por exemplo).
 
 ### 📦 1.2. Classe `Conteudo` (classe base)
 Representa um item de conteúdo consumível.
