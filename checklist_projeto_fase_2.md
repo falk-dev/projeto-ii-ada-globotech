@@ -89,18 +89,18 @@ Representa uma única interação de um usuário com um conteúdo em uma platafo
 ### 👤 1.5. Classe `Usuario`
 Representa um usuário da plataforma.
 
-- [ ] Atributos: 
-  - [ ] `__id_usuario` (int); 
-  - [ ] `__interacoes_realizadas` (list): Lista de objetos `Interacao`.
-- [ ] Construtor (`__init__`): Recebe `id_usuario`.
-- [ ] Properties: Para acesso aos atributos.
-- [ ] Métodos:
-  - [ ] `registrar_interacao(self, interacao: Interacao)`: Adiciona à lista `__interacoes_realizadas`.
-  - [ ] `obter_interacoes_por_tipo(self, tipo_desejado: str) -> list`: Filtra `__interacoes_realizadas`.
-  - [ ] `obter_conteudos_unicos_consumidos(self) -> set`: Retorna um set de objetos `Conteudo` (ou seus IDs).
-  - [ ] `calcular_tempo_total_consumo_plataforma(self, plataforma: Plataforma) -> int`: Calcula o tempo total de consumo para uma plataforma específica
-  - [ ] `plataformas_mais_frequentes(self, top_n=3) -> list`: Retorna as N plataformas mais utilizadas pelo usuário.
-- [ ] Métodos Mágicos: `__str__`, `__repr__`.
+- [X] Atributos: 
+  - [X] `__id_usuario` (int); 
+  - [X] `__interacoes_realizadas` (list): Lista de objetos `Interacao`.
+- [X] Construtor (`__init__`): Recebe `id_usuario`.
+- [X] Properties: Para acesso aos atributos.
+- [X] Métodos:
+  - [X] `registrar_interacao(self, interacao: Interacao)`: Adiciona à lista `__interacoes_realizadas`.
+  - [X] `obter_interacoes_por_tipo(self, tipo_desejado: str) -> list`: Filtra `__interacoes_realizadas`.
+  - [X] `obter_conteudos_unicos_consumidos(self) -> set`: Retorna um set de objetos `Conteudo` (ou seus IDs).
+  - [X] `calcular_tempo_total_consumo_plataforma(self, plataforma: Plataforma) -> int`: Calcula o tempo total de consumo para uma plataforma específica
+  - [X] `plataformas_mais_frequentes(self, top_n=3) -> list`: Retorna as N plataformas mais utilizadas pelo usuário.
+- [X] Métodos Mágicos: `__str__`, `__repr__`.
 
 ---
 
