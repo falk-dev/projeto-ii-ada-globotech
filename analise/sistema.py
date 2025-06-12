@@ -1,5 +1,5 @@
 from entidades import Plataforma, Conteudo, Usuario, Interacao
-from typing import List, Dict
+from typing import List, Dict, Tuple
 import csv
 
 
@@ -62,7 +62,7 @@ class SistemaAnaliseEngajamento:
             return None
 
     def listar_conteudos(self) -> list:
-        return list(self.__usuarios_registrados.values())
+        return list(self.__conteudos_registrados.values())
 
     # Método de Gerenciamento de Usuário
     def obter_usuario(self, id_usuario: int) -> Usuario:
@@ -79,7 +79,17 @@ class SistemaAnaliseEngajamento:
             return None
 
     # Métodos de Carga e Processamento
-    def _carregar_interacoes_csv(self, caminho_arquivo: str) -> list:
+
+    # Método público criado para não acessar diretamente o método protegido '_carregar_interacoes_csv()'.
+    # Retorna uma tupla: lista (cabeçalho) e lista de listas (conteúdo do csv)
+    def carregar_interacoes(
+        self, caminho_arquivo: str
+    ) -> Tuple[List[str], List[List[str]]]:
+        return self._carregar_interacoes_csv(caminho_arquivo)
+
+    def _carregar_interacoes_csv(
+        self, caminho_arquivo: str
+    ) -> Tuple[List[str], List[List[str]]]:
         interacoes: List[str] = []
 
         try:
@@ -137,7 +147,7 @@ class SistemaAnaliseEngajamento:
             try:
                 nova_interacao = Interacao(
                     conteudo_associado=conteudo,
-                    id_usuario=usuario,
+                    id_usuario=usuario.id_usuario,
                     timestamp_interacao=timestamp_interacao,
                     plataforma_interacao=plataforma,
                     tipo_interacao=tipo_interacao,
@@ -148,7 +158,3 @@ class SistemaAnaliseEngajamento:
                 usuario.registrar_interacao(nova_interacao)
             except ValueError as e:
                 print(f"Erro de validação ao criar Interacao: {e}.")
-
-    # Método público criado para não acessar diretamente o método protegido '_carregar_interacoes_csv()'.
-    def carregar_interacoes(self, caminho_arquivo: str):
-        return self._carregar_interacoes_csv(caminho_arquivo)
