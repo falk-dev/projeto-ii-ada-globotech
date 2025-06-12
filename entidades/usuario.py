@@ -23,20 +23,21 @@ class Usuario:
          return self.__interacoes_realizadas
      
      # Métodos
-     def registrar_interacao(self, interacao: Interacao): 
-         pass
- 
+     def registrar_interacao(self, interacao): 
+         self.__interacoes_realizadas.append(interacao)
+    
      def obter_interacoes_por_tipo(self, tipo_desejado: str) -> list: #filtra interacoes_realizadas
-         pass
+         return [i for i in self.interacoes_realizadas if i.tipo_interacao == tipo_desejado]
  
      def obter_conteudos_unicos_consumidos(self) -> set: #retorna set de objetos 'conteudo'
-         pass
+         return set(i.conteudo_associado for i in self.interacoes_realizadas)
  
-     def calcular_tempo_total_consumo_plataforma(self, plataforma: Plataforma) -> int: #retorna tempo para uma plataforma
-         pass
- 
+     def calcular_tempo_total_consumo_plataforma(self, plataforma) -> int: #retorna tempo para uma plataforma
+         return sum(i.watch_duration_seconds for i in self.interacoes_realizadas if i.plataforma_interacao == plataforma)
+
+
      def plataformas_mais_frequentes(self, top_n=3) -> list: #retorna as plataformas mais frequentes do usuÃ¡rio
-         pass
+         
  
      #Métodos mágicos
          #__str__: representaÃ§Ã£o legÃ­vel do objeto, voltada para usuÃ¡rios finais -> chamado quando se usa str(obj) ou print(obj)
