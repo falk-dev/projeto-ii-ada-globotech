@@ -1,20 +1,20 @@
 from datetime import datetime
+from entidades import Conteudo, Plataforma
+
 
 class Interacao:
-    TIPOS_INTERACAO_VALIDOS = {'view_start', 'like', 'share', 'comment'}
+    TIPOS_INTERACAO_VALIDOS = {"view_start", "like", "share", "comment"}
 
     def __init__(
-            self,
-            id_interacao: int,
-            conteudo_associado,
-            id_usuario: int,
-            timestamp_interacao,
-            plataforma_interacao,
-            tipo_interacao: str,
-            watch_duration_seconds: int = 0,
-            comment_text: str = ""
+        self,
+        conteudo_associado: Conteudo,
+        id_usuario: int,
+        timestamp_interacao: datetime,
+        plataforma_interacao: Plataforma,
+        tipo_interacao: str,
+        watch_duration_seconds: int = 0,
+        comment_text: str = "",
     ) -> None:
-        self._id_interacao = id_interacao
         self._conteudo_associado = conteudo_associado
         self._id_usuario = int(id_usuario)
         self._plataforma_interacao = plataforma_interacao

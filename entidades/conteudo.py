@@ -41,7 +41,7 @@ class Conteudo:
         self._nome_conteudo = nome
 
     # Métodos
-    def adicionar_interacao(self, interacao): 
+    def adicionar_interacao(self, interacao):
         pass
 
     def calcular_total_interacoes_engajamento(self):
@@ -61,7 +61,10 @@ class Conteudo:
 
     # Métodos mágicos
     def __str__(self):
-        pass
+        relatorio = f"ID: {self.id_conteudo}\n"
+        relatorio += f"Conteúdo: {self.nome_conteudo}\n"
+        relatorio += f"===============================\n"
+        return relatorio
 
     def __repr__(self):
         return f"Curso(id_conteudo={self._id_conteudo}, nome_conteudo={self._nome_conteudo})"
@@ -70,10 +73,10 @@ class Conteudo:
 class Video(Conteudo):
     pass
 
+
 class Podcast(Conteudo):
     pass
 
+
 class Artigo(Conteudo):
     pass
-
-
