@@ -39,13 +39,13 @@ Representa um item de conteúdo consumível.
   - [X] Inicializa `_interacoes` como uma lista vazia.
 - [X] Criar `@property` para `id_conteudo` e `nome_conteudo`.
 - [ ] Métodos:
-  - [ ] `adicionar_interacao(self, interacao)`: Adiciona um objeto Interacao à lista `_interacoes`;
+  - [X] `adicionar_interacao(self, interacao)`: Adiciona um objeto Interacao à lista `_interacoes`;
   - [ ] `calcular_total_interacoes_engajamento(self)`: Calcula o total de 'like', 'share', 'comment';
   - [ ] `calcular_contagem_por_tipo_interacao(self)`: Retorna um dicionário com a contagem de cada tipo de interação;
   - [ ] `calcular_tempo_total_consumo(self)`:  Soma watch_duration_seconds das interações.
   - [ ] `calcular_media_tempo_consumo(self)`: Calcula a média de watch_duration_seconds > 0;
   - [ ] `listar_comentarios(self)`: Retorna uma lista dos textos dos comentários.
-- [ ] Métodos mágicos `__str__(self)` e `__repr__(self)`.
+- [X] Métodos mágicos `__str__(self)` e `__repr__(self)`.
 
 ### 📺 1.3. Classes Derivadas de `Conteudo`
 #### 🔸 `Video`
@@ -89,18 +89,18 @@ Representa uma única interação de um usuário com um conteúdo em uma platafo
 ### 👤 1.5. Classe `Usuario`
 Representa um usuário da plataforma.
 
-- [ ] Atributos: 
-  - [ ] `__id_usuario` (int); 
-  - [ ] `__interacoes_realizadas` (list): Lista de objetos `Interacao`.
-- [ ] Construtor (`__init__`): Recebe `id_usuario`.
-- [ ] Properties: Para acesso aos atributos.
-- [ ] Métodos:
-  - [ ] `registrar_interacao(self, interacao: Interacao)`: Adiciona à lista `__interacoes_realizadas`.
-  - [ ] `obter_interacoes_por_tipo(self, tipo_desejado: str) -> list`: Filtra `__interacoes_realizadas`.
-  - [ ] `obter_conteudos_unicos_consumidos(self) -> set`: Retorna um set de objetos `Conteudo` (ou seus IDs).
-  - [ ] `calcular_tempo_total_consumo_plataforma(self, plataforma: Plataforma) -> int`: Calcula o tempo total de consumo para uma plataforma específica
-  - [ ] `plataformas_mais_frequentes(self, top_n=3) -> list`: Retorna as N plataformas mais utilizadas pelo usuário.
-- [ ] Métodos Mágicos: `__str__`, `__repr__`.
+- [X] Atributos: 
+  - [X] `__id_usuario` (int); 
+  - [X] `__interacoes_realizadas` (list): Lista de objetos `Interacao`.
+- [X] Construtor (`__init__`): Recebe `id_usuario`.
+- [X] Properties: Para acesso aos atributos.
+- [X] Métodos:
+  - [X] `registrar_interacao(self, interacao: Interacao)`: Adiciona à lista `__interacoes_realizadas`.
+  - [X] `obter_interacoes_por_tipo(self, tipo_desejado: str) -> list`: Filtra `__interacoes_realizadas`.
+  - [X] `obter_conteudos_unicos_consumidos(self) -> set`: Retorna um set de objetos `Conteudo` (ou seus IDs).
+  - [X] `calcular_tempo_total_consumo_plataforma(self, plataforma: Plataforma) -> int`: Calcula o tempo total de consumo para uma plataforma específica
+  - [X] `plataformas_mais_frequentes(self, top_n=3) -> list`: Retorna as N plataformas mais utilizadas pelo usuário.
+- [X] Métodos Mágicos: `__str__`, `__repr__`.
 
 ---
 
@@ -112,20 +112,20 @@ Representa um usuário da plataforma.
   - [X] `__usuarios_registrados`: Dicionário mapeando `id_usuario` (int) para objetos `Usuario`.
   - [X] `__proximo_id_plataforma` (int): Para gerar IDs para novas plataformas.
 - [x] Construtor (`__init__`): Inicializa os dicionários e o contador de ID.
-- [ ] Métodos de Gerenciamento de Plataforma ("CRUD" em memória): 
-  - [ ] `cadastrar_plataforma(self, nome_plataforma: str) -> Plataforma`: Cria e adiciona uma nova plataforma se não existir. Retorna o objeto `Plataforma`.
-  - [ ] `obter_plataforma(self, nome_plataforma: str) -> Plataforma`: Retorna uma plataforma pelo nome. Se não existir, pode cadastrá-la.
-  - [ ] `listar_plataformas(self) -> list`: Retorna uma lista de todas as plataformas cadastradas.
-- [ ] Métodos de Carga e Processamento:
+- [X] Métodos de Gerenciamento de Plataforma ("CRUD" em memória): 
+  - [X] `cadastrar_plataforma(self, nome_plataforma: str) -> Plataforma`: Cria e adiciona uma nova plataforma se não existir. Retorna o objeto `Plataforma`.
+  - [X] `obter_plataforma(self, nome_plataforma: str) -> Plataforma`: Retorna uma plataforma pelo nome. Se não existir, pode cadastrá-la.
+  - [X] `listar_plataformas(self) -> list`: Retorna uma lista de todas as plataformas cadastradas.
+- [X] Métodos de Carga e Processamento:
   - [X] `_carregar_interacoes_csv(self, caminho_arquivo: str) -> list`: Carrega dados brutos do CSV.
-  - [ ] `processar_interacoes_do_csv(self, caminho_arquivo: str)`:
+  - [X] `processar_interacoes_do_csv(self, caminho_arquivo: str)`:
     - [X] Chama `_carregar_interacoes_csv`.
-    - [ ] Ao invés de gerar um dicionario com os dados brutos, será adaptado para armazenar os dados como objetos da classe adequada:
-      - [ ] Obtém/Cria o objeto `Plataforma`.
-      - [ ] Obtém/Cria o objeto `Conteudo`.
-      - [ ] Obtém/Cria o objeto `Usuario`.
-      - [ ] Tenta instanciar `Interacao`, lidando com `ValueError` para validações.
-      - [ ] Se `Interacao` válida, registra-a nos objetos `Conteudo` e `Usuario`.
+    - [X] Ao invés de gerar um dicionario com os dados brutos, será adaptado para armazenar os dados como objetos da classe adequada:
+      - [X] Obtém/Cria o objeto `Plataforma`.
+      - [X] Obtém/Cria o objeto `Conteudo`.
+      - [X] Obtém/Cria o objeto `Usuario`.
+      - [X] Tenta instanciar `Interacao`, lidando com `ValueError` para validações.
+      - [X] Se `Interacao` válida, registra-a nos objetos `Conteudo` e `Usuario`.
 - [ ] Métodos de Análise e Relatório:
   - [ ] `gerar_relatorio_engajamento_conteudos(self, top_n: int = None)`: Itera por `__conteudos_registrados`, usa os métodos de cada objeto `Conteudo` para calcular métricas e as exibe.
   - [ ] `gerar_relatorio_atividade_usuarios(self, top_n: int = None)`: Similar, para usuários.
@@ -179,25 +179,25 @@ Cada tarefa pode ser marcada com:
 | 1.2 | Criar atributos protegidos | Mychelle | 09/06/2025 | ✅ |
 | 1.2 | Construtor `__init__()` | Mychelle | 09/06/2025 | ✅ |
 | 1.2 | Criar `@property` | Mychelle | 09/06/2025 | ✅ |
-| 1.2 | Métodos | Mychelle | 09/06/2025 | 🚫 |
-| 1.2 | Métodos mágicos | Mychelle | 09/06/2025 | 🚫 |
+| 1.2 | Métodos | Mychelle | 09/06/2025 | ⏳ |
+| 1.2 | Métodos mágicos | Mychelle | 12/06/2025 | ✅ |
 | 1.3 | Classe `Video` | Gabi |  |  |
 | 1.3 | Classe `Podcast` | Gabi |  |  |
 | 1.3 | Classe `Artigo` | Gabi |  |  |
-| 1.4 | Atributos (privados com properties) | Rafa |  |  |
-| 1.4 | Atributo de Classe | Rafa |  |  |
-| 1.4 | Construtor (`__init__`) | Rafa |  |  |
-| 1.4 | Properties | Rafa |  |  |
-| 1.4 | Métodos Mágicos | Rafa |  |  |
-| 1.5 | Atributos | Isabela |  |  |
-| 1.5 | Construtor (`__init__`) | Isabela |  |  |
-| 1.5 | Properties | Isabela |  |  |
-| 1.5 | Métodos | Isabela |  |  |
-| 1.5 | Métodos Mágicos | Isabela |  |  |
+| 1.4 | Atributos (privados com properties) | Rafa | 11/06/2025 | ✅ |
+| 1.4 | Atributo de Classe | Rafa | 11/06/2025 | ✅ |
+| 1.4 | Construtor (`__init__`) | Rafa | 11/06/2025 | ✅ |
+| 1.4 | Properties | Rafa | 11/06/2025 | ✅ |
+| 1.4 | Métodos Mágicos | Rafa | 11/06/2025 | ✅ |
+| 1.5 | Atributos | Isabela | 12/06/2025 | ✅ |
+| 1.5 | Construtor (`__init__`) | Isabela | 12/06/2025 | ✅ |
+| 1.5 | Properties | Isabela | 12/06/2025 | ✅ |
+| 1.5 | Métodos | Isabela | 12/06/2025 | ✅ |
+| 1.5 | Métodos Mágicos | Isabela | 12/06/2025 | ✅ |
 | 2 | Atributos (privados) | Mychelle | 10/06/2025 | ✅ |
 | 2 | Construtor (`__init__`) | Mychelle | 10/06/2025 | ✅ |
-| 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Alice |  |  |
-| 2 | Métodos de Carga e Processamento | Mychelle | 10/06/2025 | 🚫 |
+| 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Mychelle | 12/06/2025 | ✅ |
+| 2 | Métodos de Carga e Processamento | Mychelle | 12/06/2025 | ✅ |
 | 2 | Métodos de Análise e Relatório | Alice  |  |  |
 | 2 | Atributo de Classe/Método de Classe | Mychelle | 10/06/2025 | ✅ |
 | 3 | Criar estrutura de diretórios e arquivos | Will | 04/06/2025 | ✅ |
