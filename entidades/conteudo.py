@@ -1,19 +1,9 @@
-"""
-Atributos: __id_conteudo, __nome_conteudo, __interacoes (lista de objetos Interacao).
+from typing import TYPE_CHECKING
 
-Métodos:
-
-adicionar_interacao(), calcular_total_interacoes_engajamento().
-
-calcular_tempo_total_consumo(), listar_comentarios(), etc.
-
-Subclasses de Conteudo (Herança/Polimorfismo):
-
-Video: Método calcular_percentual_medio_assistido().
-
-Podcast e Artigo: Atributos específicos de duração.
-
-"""
+# Adicionando para evitar problema de importação circular
+# Importa apenas quando for chamada, no restante do código não é executado
+if TYPE_CHECKING:
+    from .interacao import Interacao
 
 
 class Conteudo:
@@ -36,13 +26,19 @@ class Conteudo:
     def nome_conteudo(self) -> str:
         return self._nome_conteudo
 
-    @id_conteudo.setter
+    @nome_conteudo.setter
     def nome_conteudo(self, nome: str) -> str:
         self._nome_conteudo = nome
 
+    @property
+    def interacoes(self):
+        return self._interacoes
+
     # Métodos
-    def adicionar_interacao(self, interacao):
-        pass
+    # O tipo 'Interacao' está entre aspas para evitar o problema de importação circular,
+    # daí colocando entre aspas, comunica ao Python para "se preocupar" com o tipo apenas quando tudo estiver carregado.
+    def adicionar_interacao(self, interacao: "Interacao"):
+        self._interacoes.append(interacao)
 
     def calcular_total_interacoes_engajamento(self):
         pass
@@ -56,18 +52,18 @@ class Conteudo:
     def calcular_media_tempo_consumo(self):
         pass
 
-    def listar_comentarios(self):
+    def listar_comentarios(self) -> list:
         pass
 
     # Métodos mágicos
     def __str__(self):
         relatorio = f"ID: {self.id_conteudo}\n"
         relatorio += f"Conteúdo: {self.nome_conteudo}\n"
-        relatorio += f"===============================\n"
+        relatorio += f"\n===============================\n"
         return relatorio
 
     def __repr__(self):
-        return f"Curso(id_conteudo={self._id_conteudo}, nome_conteudo={self._nome_conteudo})"
+        return f"Conteudo(id_conteudo={self.id_conteudo}, nome_conteudo={self.nome_conteudo})"
 
 
 class Video(Conteudo):

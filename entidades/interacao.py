@@ -1,5 +1,10 @@
 from datetime import datetime
-from entidades import Conteudo, Plataforma
+from typing import TYPE_CHECKING
+
+
+if TYPE_CHECKING:
+    from .conteudo import Conteudo
+    from .plataforma import Plataforma
 
 
 class Interacao:
@@ -7,12 +12,12 @@ class Interacao:
 
     def __init__(
         self,
-        conteudo_associado: Conteudo,
-        id_usuario: int,
-        timestamp_interacao: datetime,
-        plataforma_interacao: Plataforma,
+        conteudo_associado: "Conteudo",
+        id_usuario: str,
+        timestamp_interacao: str,
+        plataforma_interacao: "Plataforma",
         tipo_interacao: str,
-        watch_duration_seconds: int = 0,
+        watch_duration_seconds: str,
         comment_text: str = "",
     ) -> None:
         self._conteudo_associado = conteudo_associado
@@ -79,6 +84,6 @@ class Interacao:
 
     def __repr__(self):
         return (
-            f"Interacao(id_interacao={self._id_interacao}, tipo='{self._tipo_interacao}', "
+            f"Interacao(tipo='{self._tipo_interacao}', "
             f"user={self._id_usuario}, conteudo='{self._conteudo_associado._nome_conteudo}')"
         )

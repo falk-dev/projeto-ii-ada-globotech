@@ -36,7 +36,7 @@ class Plataforma:
     def __str__(self):
         relatorio = f"ID: {self.id_plataforma}\n"
         relatorio += f"Plataforma: {self.nome_plataforma}\n"
-        relatorio += f"===============================\n"
+        relatorio += f"\n===============================\n"
         return relatorio
 
     def __repr__(self):
