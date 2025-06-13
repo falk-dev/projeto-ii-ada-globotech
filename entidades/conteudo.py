@@ -56,35 +56,18 @@ class Conteudo:
         return Counter(tipos)
 
     def calcular_total_interacoes_engajamento(self) -> str:
-        # A definição do dicionário abaixo é para definir o emoji de cada interação
-        # Apenas para deixar mais bonito visualmente.
-        emojis = {
-            "view_start": "👀",
-            "like": "❤️ ",
-            "comment": "💬",
-            "share": "🤝",
-        }
+        interacoes = {"like", "comment", "share"}
 
-        # Armazenando em uma variáavel o resultado do dicionário do método acima
-        contagem_interacoes = self.calcular_contagem_por_tipo_interacao()
+        engajamentos = sum(1 for i in self.interacoes if i.tipo_interacao in interacoes)
 
-        # Para o caso de o conteúdo não haver interações cadastradas
-        # Apenas para garantia, pois não é possível um conteúdo ser cadastrado e não haver interação
-        # Um conteúdo é cadastrado somente quando há interação
-        if not contagem_interacoes:
-            relatorio = f"➡️   {self.nome_conteudo}\n"
-            relatorio += f"Nenhuma interação registrada"
-            relatorio += "\n---------------------------------------"
+        if not engajamentos:
+            relatorio = f"\n➡️   {self.nome_conteudo}\n"
+            relatorio += f"\nNenhuma interação registrada"
+            relatorio += "\n\n---------------------------------------"
             return relatorio
 
-        # Iniciando o relatório com o nome do conteúdo
-        relatorio = f"➡️   {self.nome_conteudo}"
-
-        for tipo_interacao, quantidade_interacao in contagem_interacoes.items():
-            # Pegando o emoji pertinente ao tipo de interação
-            # Se o tipo da interação não houver um emoji específico atribuído no dicionário de emojis, então o emoji da seta será usado como padrão
-            emoji = emojis.get(tipo_interacao, "➡️")
-            relatorio += f"\n{emoji}  {tipo_interacao}: {quantidade_interacao}"
+        relatorio = f"➡️   {self.nome_conteudo}\n"
+        relatorio += f"\nTotal de engajamentos: {engajamentos}"
 
         # Linha de separação entre relatórios
         relatorio += "\n\n---------------------------------------"
