@@ -71,10 +71,11 @@ class Interacao:
         return self._comment_text
 
     def is_engajamento(self):
-        return self._tipo_interacao in {"like", "share", "comment"}
+        return self._tipo_interacao in {"like", "share", "comment", "view_start"}
 
     def is_comentario(self):
         return self._tipo_interacao == "comment" and bool(self._comment_text)
+        
 
     def __str__(self):
         return (

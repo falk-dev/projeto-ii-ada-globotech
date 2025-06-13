@@ -52,7 +52,7 @@ class Conteudo:
         """Retorna um dicionário mapeando cada tipo de interação à sua contagem."""
         contagem = {}
         for inter in self._interacoes:
-            tipo = getattr(inter, 'tipo', None)
+            tipo = getattr(inter, 'tipo_interacao', None)
             if tipo is None:
                 continue
             contagem[tipo] = contagem.get(tipo, 0) + 1
@@ -62,31 +62,18 @@ class Conteudo:
         """Soma o tempo consumido (em segundos) de todas as interações que tenham esse atributo."""
         total = 0
         for inter in self._interacoes:
-            tempo = getattr(inter, 'tempo_consumo_seg', 0)
+            tempo = getattr(inter, 'watch_duration_seconds', 0)
             if isinstance(tempo, (int, float)):
                 total += tempo
         return total
 
     def calcular_media_tempo_consumo(self) -> float:
         """Calcula a média de tempo consumido entre as interações que possuam tempo de consumo."""
-        tempos = []
-        for inter in self._interacoes:
-            tempo = getattr(inter, 'tempo_consumo_seg', 0)
-            if tempo > 0:
-                tempos.append(tempo)
-        if not tempos:
-            return 0.0
-        return sum(tempos) / len(tempos)
+        tempos = [inter.watch_duration_seconds for inter in self._interacoes if inter.watch_duration_seconds > 0]
+        return sum(tempos) / len(tempos) if tempos else 0.0
 
     def listar_comentarios(self) -> list:
-        """Retorna lista com os textos de comentários de todas as interações do tipo comentário."""
-        comentarios = []
-        for inter in self._interacoes:
-            if getattr(inter, 'tipo', None) == 'comentario':
-                texto = getattr(inter, 'comentario', None)
-                if texto:
-                    comentarios.append(texto)
-        return comentarios
+        return [i.comment_text for i in self._interacoes if i.is_comentario()]
 
     # Métodos mágicos para representação
     def __str__(self) -> str:
@@ -97,6 +84,7 @@ class Conteudo:
 
     def __repr__(self) -> str:
         return f"Conteudo(id_conteudo={self.id_conteudo}, nome_conteudo={self.nome_conteudo})"
+    
 
 
 # Subclasses (Herança e Polimorfismo)

@@ -48,18 +48,22 @@ class SistemaAnaliseEngajamento:
         return list(self.__plataformas_registradas.values())
 
     # Métodos de Gerenciamento de Conteúdo
+    
     def obter_conteudo(self, id_conteudo: int, nome_conteudo: str) -> Conteudo:
+        """Obtém ou cadastra um conteúdo com base no ID e nome fornecidos.
+        Se o conteúdo já estiver registrado, retorna o objeto Conteudo correspondente.
+        Se não estiver registrado, cria um novo objeto Conteudo e o adiciona ao dicionário de conteúdos registrados.
+        Retorna o objeto Conteudo correspondente ou None em caso de erro.
+        """
         try:
-            conteudo = Conteudo(id_conteudo, nome_conteudo)
-
-            # Exemplo de como vai ser salvo no dicionário: {1: Conteudo(id=1, nome="Novela Renascer")}
-            self.__conteudos_registrados[id_conteudo] = conteudo
-
-            return conteudo
-
+            if id_conteudo not in self.__conteudos_registrados:
+                conteudo = Conteudo(id_conteudo, nome_conteudo)
+                self.__conteudos_registrados[id_conteudo] = conteudo
+            return self.__conteudos_registrados[id_conteudo]
         except Exception as e:
             print(f"{e}: não foi possível cadastrar ou obter o conteúdo.")
             return None
+
 
     def listar_conteudos(self) -> list:
         return list(self.__conteudos_registrados.values())
@@ -77,6 +81,7 @@ class SistemaAnaliseEngajamento:
         except Exception as e:
             print(f"{e}: não foi possível cadastrar ou obter o usuário.")
             return None
+        
 
     # Métodos de Carga e Processamento
 
