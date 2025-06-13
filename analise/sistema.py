@@ -9,24 +9,45 @@ class SistemaAnaliseEngajamento:
 
     # Construtor
     def __init__(self):
+        # Inicializando dicionários e o atributo de contagem do id da plataforma
         self.__plataformas_registradas: Dict[str, Plataforma] = {}
         self.__conteudos_registrados: Dict[int, Conteudo] = {}
         self.__usuarios_registrados: Dict[int, Usuario] = {}
         self.__proximo_id_plataforma: int = 1
 
     # Métodos de Gerenciamento de Plataforma
-    def cadastrar_plataforma(self, nome_plataforma: str) -> Plataforma:
-        id = self.__proximo_id_plataforma
-
+    def obter_plataforma(self, nome_plataforma: str) -> Plataforma:
         try:
             # Para o dicionário de plataformas registradas, será utilizado o nome da plataforma como chave, mas em minúsculo para não haver duplicata de chave.
             # Como o nome original vai estar no objeto Plataforma, então não há problema fazer essa conversão.
             nome_plataforma_minusculo = nome_plataforma.lower()
 
+            # Se a plataforma não estiver cadastrada, então será invocado o método de cadastro de plataforma
+            if nome_plataforma_minusculo not in self.__plataformas_registradas:
+                plataforma = self.cadastrar_plataforma(nome_plataforma)
+                return plataforma
+
+            return self.__plataformas_registradas[nome_plataforma_minusculo]
+
+        except Exception as e:
+            print(f"{e}: não foi possível cadastrar ou obter a plataforma.")
+            return None
+
+    def cadastrar_plataforma(self, nome_plataforma: str) -> Plataforma:
+        # Recebendo o id da nova plataforma gerado automaticamente pela classe
+        id = self.__proximo_id_plataforma
+
+        try:
+            # Mesmo caso do método obter_plataforma
+            nome_plataforma_minusculo = nome_plataforma.lower()
+
+            # Criando objeto de uma nova plataforma
             nova_plataforma = Plataforma(id, nome_plataforma)
 
-            # Exemplo de como vai ser salvo no dicionário: {globoplay: Plataforma(id=1, nome="Globoplay")}
+            # Exemplo de como vai ser salvo no dicionário: {'globoplay': Plataforma(id=1, nome="Globoplay")}
             self.__plataformas_registradas[nome_plataforma_minusculo] = nova_plataforma
+
+            # Definindo o id do proximo do id
             self.__proximo_id_plataforma += 1
 
             return nova_plataforma
@@ -35,33 +56,39 @@ class SistemaAnaliseEngajamento:
             print(f"{e}: não foi possível cadastrar a plataforma.")
             return None
 
-    def obter_plataforma(self, nome_plataforma: str) -> Plataforma:
-        nome_plataforma_minusculo = nome_plataforma.lower()
-
-        if nome_plataforma_minusculo not in self.__plataformas_registradas:
-            plataforma = self.cadastrar_plataforma(nome_plataforma)
-            return plataforma
-
-        return self.__plataformas_registradas[nome_plataforma_minusculo]
-
+    # Exemplo de retorno: Plataforma(id=1, nome="Globoplay")
     def listar_plataformas(self) -> list:
         return list(self.__plataformas_registradas.values())
 
     # Métodos de Gerenciamento de Conteúdo
-    def obter_conteudo(self, id_conteudo: int, nome_conteudo: str) -> Conteudo:
+    def obter_conteudo(self, id_conteudo: str, nome_conteudo: str) -> Conteudo:
         try:
-            conteudo = Conteudo(id_conteudo, nome_conteudo)
+            # Se o conteúdo não estiver cadastrado, então será invocado o método de cadastro de conteúdo
+            if id_conteudo not in self.__conteudos_registrados:
+                conteudo = self.cadastrar_conteudo(id_conteudo, nome_conteudo)
+                return conteudo
 
-            # Exemplo de como vai ser salvo no dicionário: {1: Conteudo(id=1, nome="Novela Renascer")}
-            self.__conteudos_registrados[id_conteudo] = conteudo
-
-            return conteudo
+            return self.__conteudos_registrados[id_conteudo]
 
         except Exception as e:
             print(f"{e}: não foi possível cadastrar ou obter o conteúdo.")
             return None
 
-    def listar_conteudos(self) -> list:
+    def cadastrar_conteudo(self, id_conteudo: str, nome_conteudo: str) -> Conteudo:
+        try:
+            novo_conteudo = Conteudo(id_conteudo, nome_conteudo)
+
+            # Exemplo de como vai ser salvo no dicionário: {1: Conteudo(id=1, nome="Jornal Nacional")}
+            self.__conteudos_registrados[id_conteudo] = novo_conteudo
+
+            return novo_conteudo
+
+        except Exception as e:
+            print(f"{e}: não foi possível cadastrar conteúdo.")
+            return None
+
+    # Método que retorna todos os conteúdos cadastrados
+    def listar_conteudos(self) -> list["Conteudo"]:
         return list(self.__conteudos_registrados.values())
 
     # Método de Gerenciamento de Usuário
@@ -96,8 +123,10 @@ class SistemaAnaliseEngajamento:
             with open(file=caminho_arquivo, mode="r", encoding="utf-8") as arquivo_csv:
                 leitor_csv = csv.reader(arquivo_csv)
 
+                # Armazena em uma variável o cabeçalho do csv
                 cabecalho = next(leitor_csv)
 
+                # Percorre todas as linhas, exceto o cabeçalho
                 for linha in leitor_csv:
                     interacoes.append(linha)
 
@@ -111,7 +140,7 @@ class SistemaAnaliseEngajamento:
             print(f"{e}: não foi possível carregar o arquivo")
 
     def processar_interacoes_do_csv(self, caminho_arquivo: str):
-        cabecalho, interacoes = self._carregar_interacoes_csv(caminho_arquivo)
+        cabecalho, interacoes = self.carregar_interacoes(caminho_arquivo)
 
         try:
             __index_id_conteudo = cabecalho.index("id_conteudo")
@@ -126,22 +155,23 @@ class SistemaAnaliseEngajamento:
             print(f"{e}: não foi possível localizar coluna(s) do cabeçalho.")
 
         for linha in interacoes:
+            # obtém/cria o objeto Conteudo
             id_conteudo = linha[__index_id_conteudo]
             nome_conteudo = linha[__index_nome_conteudo]
             conteudo = self.obter_conteudo(id_conteudo, nome_conteudo)
 
+            # obtém/cria o objeto Usuário
             id_usuario = linha[__index_id_usuario]
             usuario = self.obter_usuario(id_usuario)
 
-            timestamp_interacao = linha[__index_timestamp_interacao]
-
+            # obtém/cria o objeto Plataforma
             nome_plataforma = linha[__index_plataforma]
             plataforma = self.obter_plataforma(nome_plataforma)
 
+            # Definindo index de outras colunas
+            timestamp_interacao = linha[__index_timestamp_interacao]
             tipo_interacao = linha[__index_tipo_interacao]
-
             watch_duration_seconds = linha[__index_watch_duration_seconds]
-
             comment_text = linha[__index_comment_text]
 
             try:
@@ -154,7 +184,10 @@ class SistemaAnaliseEngajamento:
                     watch_duration_seconds=watch_duration_seconds,
                     comment_text=comment_text,
                 )
+
+                # Se for interação válida, então envia a interação para a classe Conteudo e para a classe Usuario
                 conteudo.adicionar_interacao(nova_interacao)
                 usuario.registrar_interacao(nova_interacao)
+
             except ValueError as e:
                 print(f"Erro de validação ao criar Interacao: {e}.")

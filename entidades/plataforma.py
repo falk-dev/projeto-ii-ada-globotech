@@ -31,12 +31,16 @@ class Plataforma:
             raise ValueError("O ID da plataforma deve ser um inteiro não negativo.")
         self.__id_plataforma = novo_id
 
+    @property
+    def nome_plataforma(self) -> str:
+        return self.__nome_plataforma
+
     # Metodos Magicos
 
     def __str__(self):
         relatorio = f"ID: {self.id_plataforma}\n"
         relatorio += f"Plataforma: {self.nome_plataforma}\n"
-        relatorio += f"\n===============================\n"
+        relatorio += f"\n--------------------------------\n"
         return relatorio
 
     def __repr__(self):
