@@ -1,14 +1,13 @@
 import pytest
 from datetime import datetime
-
-from .interacao import Interacao
+from entidades.interacao import Interacao
+from entidades.plataforma import Plataforma
 
 
 class Conteudo:
     def __init__(self, id_conteudo, nome_conteudo):
         self._id_conteudo = id_conteudo
         self._nome_conteudo = nome_conteudo
-
 
 class Plataforma:
     def __init__(self, id_plataforma, nome_plataforma):

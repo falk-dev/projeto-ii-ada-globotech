@@ -1,4 +1,4 @@
-from .plataforma import Plataforma
+from ..entidades.plataforma import Plataforma
 
 if __name__ == "__main__":
     p = Plataforma(1, "Globoplay")
