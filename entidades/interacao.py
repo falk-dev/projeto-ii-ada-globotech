@@ -77,13 +77,32 @@ class Interacao:
         return self._tipo_interacao == "comment" and bool(self._comment_text)
 
     def __str__(self):
-        return (
-            f"Interacao({self._tipo_interacao}, user={self._id_usuario}, "
-            f"conteudo={self._conteudo_associado._nome_conteudo})"
-        )
+        relatorio = f"Interação do tipo: '{self.tipo_interacao}'\n"
+        relatorio += f"  - Usuário ID: {self.id_usuario}\n"
+        relatorio += f"  - Data/Hora: {self.timestamp_interacao}\n"
+        relatorio += f"  - Conteúdo: '{self.conteudo_associado.nome_conteudo}' (ID: {self.conteudo_associado.id_conteudo})\n"
+        relatorio += f"  - Plataforma: '{self.plataforma_interacao.nome_plataforma}'\n"
+
+        if self.watch_duration_seconds:
+            relatorio += (
+                f"  - Duração Assistida: {self.watch_duration_seconds} segundos\n"
+            )
+
+        if self.comment_text:
+            relatorio += f'  - Comentário: "{self.comment_text}"\n'
+
+        relatorio += "---------------------------------------\n"
+
+        return relatorio
 
     def __repr__(self):
         return (
-            f"Interacao(tipo='{self._tipo_interacao}', "
-            f"user={self._id_usuario}, conteudo='{self._conteudo_associado._nome_conteudo}')"
+            f"Interacao("
+            f"conteudo_associado={repr(self.conteudo_associado)}, "
+            f"id_usuario={repr(self.id_usuario)}, "
+            f"timestamp_interacao={repr(self.timestamp_interacao)}, "
+            f"plataforma_interacao={repr(self.plataforma_interacao)}, "
+            f"tipo_interacao={repr(self.tipo_interacao)}, "
+            f"watch_duration_seconds={repr(self.watch_duration_seconds)}, "
+            f"comment_text={repr(self.comment_text)})"
         )
