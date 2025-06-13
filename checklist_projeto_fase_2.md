@@ -49,17 +49,17 @@ Representa um item de conteúdo consumível.
 
 ### 📺 1.3. Classes Derivadas de `Conteudo`
 #### 🔸 `Video`
-- [ ] Atributo adicional: `__duracao_total_video_seg` - int, privado
-- [ ] Construtor (`__init__`): Chama `super().__init__()` e inicializa `__duracao_total_video_seg`.
-- [ ] Property para `duracao_total_video_seg`.
-- [ ] Métodos Sobrescritos/Novos:
-  - [ ] `calcular_percentual_medio_assistido(self)`: Calcula `(tempo médio de consumo / duracao_total_video_seg) * 100`. Retorna `0` se `duracao_total_video_seg` for `0`.
+- [X] Atributo adicional: `__duracao_total_video_seg` - int, privado
+- [X] Construtor (`__init__`): Chama `super().__init__()` e inicializa `__duracao_total_video_seg`.
+- [X] Property para `duracao_total_video_seg`.
+- [X] Métodos Sobrescritos/Novos:
+  - [X] `calcular_percentual_medio_assistido(self)`: Calcula `(tempo médio de consumo / duracao_total_video_seg) * 100`. Retorna `0` se `duracao_total_video_seg` for `0`.
 
 #### 🔸 `Podcast`
-- [ ] Atributos adicional: `__duracao_total_episodio_seg` (int, privado, opcional para maior detalhe).
+- [X] Atributos adicional: `__duracao_total_episodio_seg` (int, privado, opcional para maior detalhe).
 
 #### 🔸 `Artigo`
-- [ ] Atributos adicional: `__tempo_leitura_estimado_seg` (int, privado).
+- [X] Atributos adicional: `__tempo_leitura_estimado_seg` (int, privado).
 
 ### 💬 1.4. Classe `Interacao`
 Representa uma única interação de um usuário com um conteúdo em uma plataforma.
