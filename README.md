@@ -2,6 +2,8 @@
 
 Este repositório contém o desenvolvimento do **Projeto II** do desafio **Ada Tech x Globotech**, uma iniciativa que simula experiências reais do mercado de tecnologia por meio de projetos em equipe.
 
+![Capa do projeto II DS-PY-19 com os logos da Ada e da Globo ao topo, fundo gradiente roxo-azul e o botão “Grupo Pythonautas”](imagens/image1.jpg)
+
 Neste segundo projeto, o grupo aplicou os conceitos de **Programação Orientada a Objetos (POO)** com **Python**, visando construir um sistema modular e robusto para análise de engajamento de conteúdos em plataformas do ecossistema Globo, como Globoplay, G1 e outros.
 
 ---
@@ -66,3 +68,16 @@ Desenvolver um sistema orientado a objetos capaz de processar e analisar intera�
 ```bash
 python main.py
 ```
+
+## 📑 Apresentação & Review
+Abaixo você encontra os slides que apresentamos durante nossa entrega: os objetivos de aprendizagem, o escopo inicial, as métricas calculadas, os principais desafios que enfrentamos e, por fim, nossos agradecimentos.
+
+![Objetivos de Aprendizagem da Fase 2.](imagens/image2.jpg)
+
+![Resumo da Fase 2 e a Solução Proposta](imagens/image3.jpg)
+
+![Desafios e Aprendizados que enfrentamos no desenvolvimento da fase 2](imagens/image4.jpg)
+
+![Slide de agradecimento com os logos da Ada e da Globo, fundo gradiente roxo-azul e o texto “Obrigado” centralizado](imagens/image5.jpg)
+
+---
