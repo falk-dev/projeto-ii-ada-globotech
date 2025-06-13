@@ -149,7 +149,6 @@ class SistemaAnaliseEngajamento:
                 conteudo.adicionar_interacao(interacao)
                 usuario.registrar_interacao(interacao)
 
-<<<<<<< HEAD
             except Exception as e:
                 print(f"[ERRO] Linha ignorada por erro: {e}\nConteúdo bruto: {linha}")
 
@@ -198,69 +197,3 @@ class SistemaAnaliseEngajamento:
 
     def listar_usuarios(self) -> list:
         return list(self.__usuarios_registrados.values())
-=======
-            except ValueError as e:
-                print(f"Erro de validação ao criar Interacao: {e}.")
-
-    # Gera um relatório de engajamento por conteúdo
-    def gerar_relatorio_engajamento_conteudos(self, top_n=None) -> str:
-        # A definição do dicionário abaixo é para definir o emoji de cada interação
-        # Apenas para deixar mais bonito visualmente.
-        emojis = {
-            "view_start": "👀",
-            "like": "❤️ ",
-            "comment": "💬",
-            "share": "🤝",
-        }
-
-        lista_de_conteudos = self.listar_conteudos()
-        relatorio = ""
-
-        # Como é uma lista de conteúdos, então é necessário que, para ser possível acessar os métodos da classe,
-        # é preciso iterar para chamar o método de cada conteúdo individualmente
-        for conteudo in lista_de_conteudos:
-            contagem_interacoes = conteudo.calcular_contagem_por_tipo_interacao()
-
-            # Para o caso de o conteúdo não haver interações cadastradas
-            if not contagem_interacoes:
-                relatorio = f"➡️   {conteudo.nome_conteudo}\n"
-                relatorio += f"Nenhuma interação registrada"
-                relatorio += "\n---------------------------------------"
-                return relatorio
-
-            # Iniciando o relatório com o nome do conteúdo
-            relatorio = f"➡️   {conteudo.nome_conteudo}"
-
-            for tipo_interacao, quantidade_interacao in contagem_interacoes.items():
-                # Pegando o emoji pertinente ao tipo de interação
-                # Se o tipo da interação não houver um emoji específico atribuído no dicionário de emojis, então o emoji da seta será usado como padrão
-                emoji = emojis.get(tipo_interacao, "➡️")
-                relatorio += f"\n{emoji}  {tipo_interacao}: {quantidade_interacao}"
-
-            # Linha de separação entre relatórios
-            relatorio += "\n\n---------------------------------------"
-
-        return f"\n{relatorio}"
-
-    # Gera um relatório com os usuários mais ativos
-    def gerar_relatorio_atividade_usuarios(self, top_n=None):
-        usuarios = list(self.__usuarios_registrados.values())
-        usuarios.sort(key=lambda u: len(u.Usuario_interacoes_realizadas), reverse=True)
-        for usuario in usuarios[:top_n] if top_n else usuarios:
-            print(
-                f"Usuário {usuario.id_usuario}: {len(usuario.Usuario_interacoes_realizadas)} interações"
-            )
-
-    # Identifica os top conteúdos com base na métrica especificada
-    def identificar_top_conteudos(self, metrica: str, n: int):
-        conteudos = list(self.__conteudos_registrados.values())
-        if metrica == "tempo_total_consumo":
-            conteudos.sort(key=lambda c: c.calcular_tempo_total_consumo(), reverse=True)
-        elif metrica == "media_tempo_consumo":
-            conteudos.sort(key=lambda c: c.calcular_media_tempo_consumo(), reverse=True)
-        else:
-            print("Métrica desconhecida.")
-            return
-        for conteudo in conteudos[:n]:
-            print(f"{getattr(conteudo, f'calcular_{metrica}')()}s")
->>>>>>> 1cd63ee321a559c4b0aae46dcdb8677d84fa0424
