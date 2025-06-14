@@ -38,13 +38,13 @@ Representa um item de conteúdo consumível.
   - [X] Recebe `id_conteudo` e `nome_conteudo`;
   - [X] Inicializa `_interacoes` como uma lista vazia.
 - [X] Criar `@property` para `id_conteudo` e `nome_conteudo`.
-- [ ] Métodos:
+- [X] Métodos:
   - [X] `adicionar_interacao(self, interacao)`: Adiciona um objeto Interacao à lista `_interacoes`;
-  - [ ] `calcular_total_interacoes_engajamento(self)`: Calcula o total de 'like', 'share', 'comment';
-  - [ ] `calcular_contagem_por_tipo_interacao(self)`: Retorna um dicionário com a contagem de cada tipo de interação;
-  - [ ] `calcular_tempo_total_consumo(self)`:  Soma watch_duration_seconds das interações.
-  - [ ] `calcular_media_tempo_consumo(self)`: Calcula a média de watch_duration_seconds > 0;
-  - [ ] `listar_comentarios(self)`: Retorna uma lista dos textos dos comentários.
+  - [X] `calcular_total_interacoes_engajamento(self)`: Calcula o total de 'like', 'share', 'comment';
+  - [X] `calcular_contagem_por_tipo_interacao(self)`: Retorna um dicionário com a contagem de cada tipo de interação;
+  - [X] `calcular_tempo_total_consumo(self)`:  Soma watch_duration_seconds das interações.
+  - [X] `calcular_media_tempo_consumo(self)`: Calcula a média de watch_duration_seconds > 0;
+  - [X] `listar_comentarios(self)`: Retorna uma lista dos textos dos comentários.
 - [X] Métodos mágicos `__str__(self)` e `__repr__(self)`.
 
 ### 📺 1.3. Classes Derivadas de `Conteudo`
@@ -64,27 +64,27 @@ Representa um item de conteúdo consumível.
 ### 💬 1.4. Classe `Interacao`
 Representa uma única interação de um usuário com um conteúdo em uma plataforma.
 
-- [ ] Atributos (privados com properties):
-  - [ ] `__interacao_id` (int, opcional, gerado internamente).;
-  - [ ] `__conteudo_associado` (`Conteudo`): Referência ao objeto `Conteudo` relacionado;
-  - [ ] `__id_usuario` (int);
-  - [ ] `__timestamp_interacao` (datetime);
-  - [ ] `__plataforma_interacao` (`Plataforma`): Referência ao objeto `Plataforma` onde ocorreu;
-  - [ ] `__tipo_interacao` (str);
-  - [ ] `__watch_duration_seconds` (int);
-  - [ ] `__comment_text` (str).
-- [ ] Atributo de Classe: 
-  - [ ] `TIPOS_INTERACAO_VALIDOS = {'view_start', 'like', 'share', 'comment'}` (ou outros definidos).
-- [ ] Construtor (`__init__`):
-  - [ ] Recebe os dados brutos (e.g., de uma linha do CSV), um objeto `Conteudo` e um objeto `Plataforma`;
-  - [ ] Valida e atribui os valores:
-    - [ ] Converte `id_usuario` para int;
-    - [ ] Converte `timestamp_interacao` para datetime;
-    - [ ] Valida `tipo_interacao` contra `Interacao.TIPOS_INTERACAO_VALIDOS`. Se inválido, pode definir um padrão ou levantar um `ValueError`;
-    - [ ] Converte `watch_duration_seconds` para int (padrão 0, não negativo);
-    - [ ] `comment_text` (`strip`, padrão string vazia).
-- [ ] **Properties**: Para acesso e validação dos atributos.
-- [ ] **Métodos Mágicos**: `__str__` e `__repr__`.
+- [X] Atributos (privados com properties):
+  - [X] `__interacao_id` (int, opcional, gerado internamente).;
+  - [X] `__conteudo_associado` (`Conteudo`): Referência ao objeto `Conteudo` relacionado;
+  - [X] `__id_usuario` (int);
+  - [X] `__timestamp_interacao` (datetime);
+  - [X] `__plataforma_interacao` (`Plataforma`): Referência ao objeto `Plataforma` onde ocorreu;
+  - [X] `__tipo_interacao` (str);
+  - [X] `__watch_duration_seconds` (int);
+  - [X] `__comment_text` (str).
+- [X] Atributo de Classe: 
+  - [X] `TIPOS_INTERACAO_VALIDOS = {'view_start', 'like', 'share', 'comment'}` (ou outros definidos).
+- [X] Construtor (`__init__`):
+  - [X] Recebe os dados brutos (e.g., de uma linha do CSV), um objeto `Conteudo` e um objeto `Plataforma`;
+  - [X] Valida e atribui os valores:
+    - [X] Converte `id_usuario` para int;
+    - [X] Converte `timestamp_interacao` para datetime;
+    - [X] Valida `tipo_interacao` contra `Interacao.TIPOS_INTERACAO_VALIDOS`. Se inválido, pode definir um padrão ou levantar um `ValueError`;
+    - [X] Converte `watch_duration_seconds` para int (padrão 0, não negativo);
+    - [X] `comment_text` (`strip`, padrão string vazia).
+- [X] **Properties**: Para acesso e validação dos atributos.
+- [X] **Métodos Mágicos**: `__str__` e `__repr__`.
 
 ### 👤 1.5. Classe `Usuario`
 Representa um usuário da plataforma.
@@ -126,10 +126,10 @@ Representa um usuário da plataforma.
       - [X] Obtém/Cria o objeto `Usuario`.
       - [X] Tenta instanciar `Interacao`, lidando com `ValueError` para validações.
       - [X] Se `Interacao` válida, registra-a nos objetos `Conteudo` e `Usuario`.
-- [ ] Métodos de Análise e Relatório:
-  - [ ] `gerar_relatorio_engajamento_conteudos(self, top_n: int = None)`: Itera por `__conteudos_registrados`, usa os métodos de cada objeto `Conteudo` para calcular métricas e as exibe.
-  - [ ] `gerar_relatorio_atividade_usuarios(self, top_n: int = None)`: Similar, para usuários.
-  - [ ] `identificar_top_conteudos(self, metrica: str, n: int)`: (e.g., `metrica='tempo_total_consumo'`).
+- [X] Métodos de Análise e Relatório:
+  - [X] `gerar_relatorio_engajamento_conteudos(self, top_n: int = None)`: Itera por `__conteudos_registrados`, usa os métodos de cada objeto `Conteudo` para calcular métricas e as exibe.
+  - [X] `gerar_relatorio_atividade_usuarios(self, top_n: int = None)`: Similar, para usuários.
+  - [X] `identificar_top_conteudos(self, metrica: str, n: int)`: (e.g., `metrica='tempo_total_consumo'`).
 - [X] Atributo de Classe/Método de Classe (opcional):
   - [X] `SistemaAnaliseEngajamento.VERSAO_ANALISE = "2.0"`
   
@@ -157,10 +157,10 @@ projeto_engajamento_fase2/
 ---
 
 ## 🎯 4. Apresentação Final
-- [ ] Demonstrar o funcionamento do sistema.
-- [ ] Explicar decisões de design OO, como as classes se relacionam, e como os
+- [X] Demonstrar o funcionamento do sistema.
+- [X] Explicar decisões de design OO, como as classes se relacionam, e como os
 princípios da POO foram aplicados.
-- [ ] Discutir desafios e aprendizados.
+- [X] Discutir desafios e aprendizados.
 
 
 ---
@@ -179,11 +179,11 @@ Cada tarefa pode ser marcada com:
 | 1.2 | Criar atributos protegidos | Mychelle | 09/06/2025 | ✅ |
 | 1.2 | Construtor `__init__()` | Mychelle | 09/06/2025 | ✅ |
 | 1.2 | Criar `@property` | Mychelle | 09/06/2025 | ✅ |
-| 1.2 | Métodos | Mychelle | 09/06/2025 | ⏳ |
+| 1.2 | Métodos | Mychelle | 13/06/2025 | ✅ |
 | 1.2 | Métodos mágicos | Mychelle | 12/06/2025 | ✅ |
-| 1.3 | Classe `Video` | Gabi |  |  |
-| 1.3 | Classe `Podcast` | Gabi |  |  |
-| 1.3 | Classe `Artigo` | Gabi |  |  |
+| 1.3 | Classe `Video` | Gabi | 12/06/2025 | ✅ |
+| 1.3 | Classe `Podcast` | Gabi | 12/06/2025 | ✅ |
+| 1.3 | Classe `Artigo` | Gabi | 12/06/2025 | ✅ |
 | 1.4 | Atributos (privados com properties) | Rafa | 11/06/2025 | ✅ |
 | 1.4 | Atributo de Classe | Rafa | 11/06/2025 | ✅ |
 | 1.4 | Construtor (`__init__`) | Rafa | 11/06/2025 | ✅ |
@@ -198,10 +198,10 @@ Cada tarefa pode ser marcada com:
 | 2 | Construtor (`__init__`) | Mychelle | 10/06/2025 | ✅ |
 | 2 | Métodos de Gerenciamento de Plataforma (CRUD) | Mychelle | 12/06/2025 | ✅ |
 | 2 | Métodos de Carga e Processamento | Mychelle | 12/06/2025 | ✅ |
-| 2 | Métodos de Análise e Relatório | Alice  |  |  |
+| 2 | Métodos de Análise e Relatório | Alice  | 13/06/2025 | ✅ |
 | 2 | Atributo de Classe/Método de Classe | Mychelle | 10/06/2025 | ✅ |
 | 3 | Criar estrutura de diretórios e arquivos | Will | 04/06/2025 | ✅ |
-| 4 | Preparar apresentação, slides, explicações | ? |  |  |
+| 4 | Preparar apresentação, slides, explicações | Todos | 12/06/2025 | ✅ |
 
 
 *Checklist baseado no documento oficial da Fase 2.*
