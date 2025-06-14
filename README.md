@@ -70,7 +70,7 @@ python main.py
 ```
 
 ## 📑 Apresentação & Review
-Abaixo você encontra os slides que apresentamos durante nossa entrega: os objetivos de aprendizagem, o escopo inicial, as métricas calculadas, os principais desafios que enfrentamos e, por fim, nossos agradecimentos.
+Abaixo você encontra os slides que apresentamos durante nossa entrega: os objetivos de aprendizagem, o resumo e a solução proposta, os principais desafios que enfrentamos e, por fim, nossos agradecimentos.
 
 ![Objetivos de Aprendizagem da Fase 2.](imagens/image2.jpg)
 
